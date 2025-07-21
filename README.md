@@ -1,7 +1,7 @@
-# Insight Banking by Sofka - Asistente Virtual
+# AutoShop by Sofka - Asistente Virtual
 
 ## Descripción
-Insight Banking by Sofka es una aplicación bancaria que incluye un asistente virtual interactivo. El asistente utiliza la API de OpenAI Realtime para generar un avatar virtual que puede comunicarse con los usuarios a través de voz y texto en tiempo real.
+AutoShop by Sofka es una aplicación bancaria que incluye un asistente virtual interactivo. El asistente utiliza la API de OpenAI Realtime para generar un avatar virtual que puede comunicarse con los usuarios a través de voz y texto en tiempo real.
 
 ## Características Principales
 
@@ -38,8 +38,8 @@ OPENAI_API_KEY=tu_api_key_de_openai
 ### Instalación
 1. Clonar el repositorio:
 ```bash
-git clone https://github.com/tu-usuario/Insight Banking by Sofka.git
-cd Insight Banking by Sofka
+git clone https://github.com/tu-usuario/AutoShop by Sofka.git
+cd AutoShop by Sofka
 ```
 
 2. Instalar dependencias:

@@ -109,7 +109,7 @@ export default function Dashboard() {
 
   return (
     <>
-      <main className="min-h-screen p-0 bg-[#c9e6d4]">
+      <main className="min-h-screen p-0 bg-[#fffac2]">
         <div className="max-w-md mx-auto">
           {/* Header */}
           <div className="bg-[#2D7A4A] text-white py-6 px-6 shadow-m">

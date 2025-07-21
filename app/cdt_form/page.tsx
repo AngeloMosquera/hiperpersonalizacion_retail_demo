@@ -49,7 +49,7 @@ export default function CDTPage() {
   };
 
   return (
-    <div className="space-y-6 px-0 md:px-6 lg:px-8 pb-16 md:pb-20 max-w-screen-xl mx-auto bg-[#c9e6d4]">
+    <div className="space-y-6 px-0 md:px-6 lg:px-8 pb-16 md:pb-20 max-w-screen-xl mx-auto bg-[#fffac2]">
       
       <div className="bg-[#2D7A4A] text-white py-6 px-6 shadow-m">
         <h1 className="text-xl text-center">Formulario de Apertura de Certificado de Depósito a Término (CDT)</h1>
