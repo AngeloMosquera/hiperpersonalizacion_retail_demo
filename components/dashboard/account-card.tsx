@@ -23,7 +23,7 @@ export function AccountCard({ type, name, number, balance, currency = "USD", lim
 
   return (
     <Card
-      className={`p-3 overflow-hidden rounded-lg shadow-lg h-full flex flex-col ${type === "savings" ? "bg-[#00a29f]" : "bg-[#deb72b]"}`}
+      className={`p-3 overflow-hidden rounded-lg shadow-lg h-full flex flex-col ${type === "savings" ? "bg-[#FF7E08]" : "bg-[#deb72b]"}`}
     >
       <CardContent className="p-0 flex-grow flex flex-col justify-between">
         <div className="flex justify-between items-start">

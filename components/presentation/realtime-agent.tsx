@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect, forwardRef, useImperativeHandle } from "react"
 import { motion } from "framer-motion"
 import { getContextById, type ConversationContext } from "@/lib/conversation-contexts"
-import { SphereVisual } from "./sphere-visual"
 
 // Declarar CustomEvent para TypeScript
 declare global {
@@ -782,7 +781,7 @@ export const RealtimeAgent = forwardRef<RealtimeAgentRef, RealtimeAgentProps>(
             {/* Image container */}
             <div className="w-full max-w-lg h-72 relative flex-shrink-0">
               {/* TEMPORARY IMAGE - Sofía Assistant */}
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl shadow-lg border border-gray-200">
+              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-50 to-yellow-50 rounded-2xl shadow-lg border border-gray-200">
                 <div className="text-center">
                   <div className="relative mb-4">
                     <img 

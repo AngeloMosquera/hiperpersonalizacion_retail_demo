@@ -117,7 +117,7 @@ export default function Dashboard() {
 
   return (
     <>
-      <main className="container w-full mx-auto px-0 py-0 bg-[#c9e6d4]">
+      <main className="container w-full mx-auto px-0 py-0 bg-[#fffac2]">
         {/* Tarjetas de cuentas - Ahora tercero */}
         <div className="grid grid-cols-2 md:grid-cols-2 gap-2 mb-2 px-4 pt-4">
           <AccountCard

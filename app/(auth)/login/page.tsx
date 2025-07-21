@@ -29,7 +29,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#004029] flex flex-col items-center justify-center p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-[#140A00] flex flex-col items-center justify-center p-4 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url(\'data:image/svg+xml;charset=UTF-8,%3Csvg width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22M10 0L10 20M0 10L20 10%22 stroke=%22white%22 stroke-width=%220.5%22/%3E%3C/svg%3E\')" }}></div>
 
       <div className="relative z-10 w-full max-w-sm mx-auto">
@@ -39,14 +39,14 @@ export default function LoginPage() {
               <div className="mr-3">
                 <Image
                   src="/icon-512x512.png"
-                  alt="Insight Banking Logo"
+                  alt="AutoShop Logo"
                   width={80}
                   height={80}
                 />
               </div>
               <div>
-                <h1 className="text-4xl font-bold text-white tracking-tight">INSIGHT</h1>
-                <h2 className="text-4xl font-light text-white tracking-tight -mt-2">BANKING</h2>
+                <h1 className="text-4xl font-bold text-white tracking-tight">AUTO</h1>
+                <h2 className="text-4xl font-light text-white tracking-tight -mt-2">SHOP</h2>
               </div>
             </div>
             <p className="text-right text-sm text-white mt-1">
@@ -59,12 +59,12 @@ export default function LoginPage() {
           </h2>
         </div>
 
-        <div className="bg-[#12B47A] rounded-[40px] shadow-2xl p-8 pt-10 w-full">
+        <div className="bg-[#FFEE2F] rounded-[40px] shadow-2xl p-8 pt-10 w-full">
           <form onSubmit={handleLogin} className="space-y-6">
               <Input
                 type="email"
                 placeholder="Ingresa tu correo"
-                icon={<Mail size={35} className="text-[#12B47A] pr-3" />}
+                icon={<Mail size={35} className="text-[#FFEE2F] pr-3" />}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -74,7 +74,7 @@ export default function LoginPage() {
             <Input
               type="password"
               placeholder="Ingresa contraseña"
-              icon={<Lock size={35} className="text-[#12B47A] pr-3" />}
+              icon={<Lock size={35} className="text-[#FFEE2F] pr-3" />}
               required
               className="bg-white placeholder-gray-500 text-gray-800 flex-grow"
             />
@@ -87,7 +87,7 @@ export default function LoginPage() {
                 className="text-white"
                 id="remember-me"
               />
-              <Link href="/forgot-password" className="font-medium text-white hover:text-gray-200">
+              <Link href="/forgot-password" className="font-medium text-black/70 hover:text-gray-200">
                 ¿Olvidaste tu contraseña?
               </Link>
             </div>
@@ -96,16 +96,16 @@ export default function LoginPage() {
               type="submit"
               fullWidth
               isLoading={isLoading}
-              className="bg-[#FF7A2E] hover:bg-[#E66A20] text-white font-bold py-3 rounded-full text-lg"
+              className="bg-[#FF9900] hover:bg-[#ffc418] text-white font-bold py-3 rounded-full text-lg"
             >
               Iniciar sesión
             </Button>
           </form>
 
           <div className="mt-8 text-center">
-            <p className="text-sm text-white">
+            <p className="text-sm text-black/70">
               ¿Nuevo aquí?{" "}
-              <Link href="/login" className="font-semibold text-[#6ECE3C] hover:text-[#8CF05D]">
+              <Link href="/login" className="font-semibold text-[#FF9900] hover:text-[#8CF05D]">
                 Crea tu cuenta
               </Link>
             </p>
