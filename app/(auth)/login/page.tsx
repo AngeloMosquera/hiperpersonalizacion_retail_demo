@@ -15,7 +15,7 @@ export default function LoginPage() {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
   const [rememberMe, setRememberMe] = useState(false)
-  const [email, setEmail] = useState("carlos@sofka.com.co")
+  const [email, setEmail] = useState("jorge@sofka.com.co")
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()

@@ -27,9 +27,9 @@ interface CDTState {
 }
 
 export const useCDTStore = create<CDTState>((set) => ({
-  firstName: "Carlos Alberto",
+  firstName: "Jorge Alberto",
   lastName: "Valderrama Palacio",
-  email: "carlos@sofka.com.co",
+  email: "jorge@sofka.com.co",
   amount: "12536200",
   accountNumber: "194839203",
   accountType: "Ahorros",
@@ -39,9 +39,9 @@ export const useCDTStore = create<CDTState>((set) => ({
   identificationType: "Cédula de Ciudadanía",
   setCDTData: (data) => set(data),
   resetCDTData: () => set({
-    firstName: "Carlos Alberto",
+    firstName: "Jorge Alberto",
     lastName: "Valderrama Palacio",
-    email: "carlos@sofka.com.co",
+    email: "jorge@sofka.com.co",
     amount: "12536200",
     accountNumber: "194839203",
     accountType: "Ahorros",
