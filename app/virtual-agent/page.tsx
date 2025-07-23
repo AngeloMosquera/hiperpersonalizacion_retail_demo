@@ -33,8 +33,8 @@ export default function VirtualAgent() {
   
   const [isProcessing, setIsProcessing] = useState(false)
   const [formData, setFormData] = useState<FormData>({
-    fullName: "Carlos Torres",
-    email: "carlos@sofka.com.co",
+    fullName: "Jorge Torres",
+    email: "jorge@sofka.com.co",
     phone: "+57 3173808475",
     monthlyIncome: "",
     employmentStatus: "",
@@ -47,7 +47,7 @@ export default function VirtualAgent() {
   const handleStart = async () => {
     if (streamingAgentRef.current && isStreamReady) {
       try {
-        const initialMessage = `¡Hola Carlos! Sofia aqui de nuevo. 
+        const initialMessage = `¡Hola Jorge! Sofia aqui de nuevo. 
         Para poder continuar con tu solicitud, necesito que me des algunos datos de tu perfil. 
         Primero, cual es tu ingreso mensual?
         Segundo, cual es tu situacion laboral
@@ -119,7 +119,7 @@ export default function VirtualAgent() {
 
   const handleComplete = async () => {
     if (streamingAgentRef.current) {
-      const completionMessage = "¡Perfecto Carlos! He recibido toda la información necesaria. Tu solicitud será procesada y te notificaremos el resultado en breve. ¡Gracias por confiar en nosotros!"
+      const completionMessage = "¡Perfecto Jorge! He recibido toda la información necesaria. Tu solicitud será procesada y te notificaremos el resultado en breve. ¡Gracias por confiar en nosotros!"
       streamingAgentRef.current.sendMessage(completionMessage)
       
       // Esperar 5 segundos antes de redirigir para que el mensaje se reproduzca

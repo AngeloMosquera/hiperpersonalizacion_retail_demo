@@ -57,7 +57,7 @@ export default function Dashboard() {
   const [isLoading, setIsLoading] = useState(false)
   const [showNotification, setShowNotification] = useState(false)
   const [showRecommendation, setShowRecommendation] = useState(true)
-  const userName = "Carlos"
+  const userName = "Jorge"
 
   const {
     userActivity,

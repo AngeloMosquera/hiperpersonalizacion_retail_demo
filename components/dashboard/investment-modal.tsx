@@ -65,7 +65,7 @@ export function InvestmentModal({ isOpen, onClose }: InvestmentModalProps) {
         <div className="p-4">
           <div className="bg-[#f0f5fa] rounded-lg p-4 mb-4">
             <p className="text-sm text-[#1C3B5A]">
-              <strong>Carlos</strong>, hemos creado esta oferta especialmente para ti basada en tu perfil financiero.
+              <strong>Jorge</strong>, hemos creado esta oferta especialmente para ti basada en tu perfil financiero.
             </p>
           </div>
 

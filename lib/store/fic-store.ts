@@ -27,9 +27,9 @@ interface FICState {
 }
 
 export const useFICStore = create<FICState>((set) => ({
-  firstName: "Carlos Alberto",
+  firstName: "Jorge Alberto",
   lastName: "Valderrama Palacio",
-  email: "carlos@sofka.com.co",
+  email: "jorge@sofka.com.co",
   amount: "25630000",
   accountNumber: "194839203",
   accountType: "Ahorros",
@@ -39,9 +39,9 @@ export const useFICStore = create<FICState>((set) => ({
   state: "Antioquia",
   setFICData: (data) => set(data),
   resetFICData: () => set({
-    firstName: "Carlos Alberto",
+    firstName: "Jorge Alberto",
     lastName: "Valderrama Palacio",
-    email: "carlos@sofka.com.co",
+    email: "jorge@sofka.com.co",
     amount: "25630000",
     accountNumber: "194839203",
     accountType: "Ahorros",

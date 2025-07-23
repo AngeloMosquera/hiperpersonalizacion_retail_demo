@@ -21,7 +21,7 @@ export function UserMenu() {
         <div className="h-8 w-8 rounded-full bg-[#1C3B5A] flex items-center justify-center text-white mr-2">
           <User size={16} />
         </div>
-        <span className="hidden md:block text-sm font-medium">Carlos</span>
+        <span className="hidden md:block text-sm font-medium">Jorge</span>
       </Button>
 
       {isProfileOpen && (

@@ -1,148 +1,135 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { TrendingUp, BookOpen, PiggyBank } from "lucide-react"
-import { AccountCard } from "@/components/dashboard/account-card"
-import { OpportunityCard } from "@/components/dashboard/opportunity-card"
-import { TransactionList } from "@/components/dashboard/transaction-list"
-import { InvestmentSimulator } from "@/components/dashboard/investment-simulator"
-import { PersonalizedRecommendation } from "@/components/dashboard/personalized-recommendation"
-import { ContextualNotification } from "@/components/dashboard/contextual-notification"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { useUserActivity } from "@/hooks/use-user-activity"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 
-// Datos de ejemplo
-const transactions = [
+// Colombian peso formatter
+const formatCOPPrice = (price: number) => {
+  return `$${price.toLocaleString('es-CO')}`
+}
+
+// Featured products data
+const featuredProducts = [
   {
     id: "1",
-    title: "Depósito recibido",
-    description: "Transferencia de nómina",
-    amount: 15000,
-    type: "income" as const,
-    category: "transfer" as const,
-    date: "15 May, 2025",
+    name: "Samsung Galaxy S25+",
+    price: 5600000,
+    category: "Smartphones",
+    image: "/phone_img_1.jpg", // You can replace with actual product images
+    categoryColor: "bg-orange-500"
   },
   {
-    id: "2",
-    title: "Supermercado La Comer",
-    description: "Compras semanales",
-    amount: 1250.75,
-    type: "expense" as const,
-    category: "shopping" as const,
-    date: "14 May, 2025",
+    id: "2", 
+    name: "On Roger ADV Z5",
+    price: 648260,
+    category: "Calzado",
+    image: "/tenis.jpg",
+    categoryColor: "bg-orange-500"
   },
   {
     id: "3",
-    title: "Starbucks",
-    description: "Café",
-    amount: 85.5,
-    type: "expense" as const,
-    category: "food" as const,
-    date: "14 May, 2025",
-  },
-  {
-    id: "4",
-    title: "Pago de hipoteca",
-    description: "Mensualidad mayo",
-    amount: 8500,
-    type: "expense" as const,
-    category: "housing" as const,
-    date: "10 May, 2025",
-  },
-  {
-    id: "5",
-    title: "Pago de tarjeta",
-    description: "Tarjeta Oro",
-    amount: 5000,
-    type: "expense" as const,
-    category: "credit" as const,
-    date: "05 May, 2025",
-  },
+    name: "Base Monitor", 
+    price: 149900,
+    category: "Oficina",
+    image: "/base_monitor.jpg",
+    categoryColor: "bg-orange-500"
+  }
 ]
 
 export default function Dashboard() {
-  const [isInvestmentSimulatorOpen, setIsInvestmentSimulatorOpen] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-  const [showNotification, setShowNotification] = useState(false)
-  const [showRecommendation, setShowRecommendation] = useState(true)
-  const userName = "Carlos"
-
-  const {
-    userActivity,
-    trackSectionView,
-    trackInteraction,
-    hasInterestIn,
-    hasAvailableBalanceForInvestment,
-    getInvestmentRecommendations,
-    updatePreferences,
-  } = useUserActivity()
-
-  // Track dashboard view
-  useEffect(() => {
-    trackSectionView("dashboard")
-
-    // Show contextual notification after a delay if user has interest in investments
-    if (hasInterestIn("investments") && hasAvailableBalanceForInvestment()) {
-      const timer = setTimeout(() => {
-        setShowNotification(true)
-      }, 5000)
-
-      return () => clearTimeout(timer)
-    }
-  }, [])
-
-  // Handle refresh - simulate data reload
-  const handleRefresh = () => {
-    setIsLoading(true)
-    trackInteraction("refresh", "dashboard")
-
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 1500)
-  }
-
-  // Handle when user clicks on a recommendation
-  const handleRecommendationAction = () => {
-    trackInteraction("click", "investment_recommendation")
-    setIsInvestmentSimulatorOpen(true)
-  }
-
-  // Handle feedback on recommendations
-  const handleRecommendationFeedback = (isHelpful: boolean) => {
-    trackInteraction("feedback", isHelpful ? "positive" : "negative")
-    updatePreferences({
-      preferredInvestmentTypes: isHelpful ? ["time_deposit"] : [],
-    })
-  }
-
   return (
     <>
-      <main className="container w-full mx-auto px-0 py-0 bg-[#fffac2]">
-        {/* Tarjetas de cuentas - Ahora tercero */}
-        <div className="grid grid-cols-2 md:grid-cols-2 gap-2 mb-2 px-4 pt-4">
-          <AccountCard
-            type="savings"
-            name="Cuenta de Ahorros"
-            number="7895"
-            balance={userActivity.financialContext.availableBalance}
-          />
-
-          <AccountCard type="credit" name="Tarjeta Oro" number="3456" balance={12500.75} limit={50000} />
+      <main className="min-h-screen bg-[#fffac2] px-4 py-4">
+        {/* Header */}
+        <div className="text-left ml-2">
+          <h1 className="text-l md:text-l font-bold text-black mb-2">
+            Productos Destacados
+          </h1>
         </div>
 
-        {/* Sección de transacciones y resumen - Sigue siendo último */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 px-4">
-          <div className="lg:col-span-4">
-            <TransactionList transactions={transactions} />
+        {/* Featured Products Grid */}
+        <div className="max-w-4xl mx-auto space-y-2">
+          {/* Main Featured Product - iPhone */}
+          <div className="w-full">
+            <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+              <CardContent className="p-0">
+                <div className="flex">
+                  {/* Left side - Product Image */}
+                  <div className="relative flex-shrink-0 w-1/2">
+                    <Badge 
+                      className={`absolute top-3 left-3 z-10 ${featuredProducts[0].categoryColor} text-white px-2 py-0.5 rounded-full text-xs font-medium`}
+                    >
+                      {featuredProducts[0].category}
+                    </Badge>
+                    
+                    {/* Product Image */}
+                    <div className="h-full bg-gray-100 flex items-center justify-center p-3">
+                      <img 
+                        src={featuredProducts[0].image} 
+                        alt={featuredProducts[0].name}
+                        className="w-32 h-50 object-cover rounded-lg"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Right side - Product Info */}
+                  <div className="flex-1 p-6 flex flex-col justify-center">
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">
+                      {featuredProducts[0].name}
+                    </h3>
+                    <p className="text-xl font-bold text-orange-500">
+                      {formatCOPPrice(featuredProducts[0].price)}
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
-          <div className="space-y-4">
-            {/* Financial Summary Card removed as it's not in the target image */}
+          {/* Secondary Products - 2 Columns */}
+          <div className="grid grid-cols-2 gap-4">
+            {featuredProducts.slice(1).map((product) => (
+              <Card key={product.id} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                <CardContent className="p-0">
+                  {/* Category Badge */}
+                  <div className="relative">
+                    <Badge 
+                      className={`absolute top-2 left-2 z-10 ${product.categoryColor} text-white px-2 py-1 rounded-full text-xs font-medium`}
+                    >
+                      {product.category}
+                    </Badge>
+                    
+                    {/* Product Image */}
+                    <div className="aspect-auto bg-gray-100 flex items-center justify-center p-3">
+                      <img 
+                        src={product.image} 
+                        alt={product.name}
+                        className="w-40 h-24 object-cover rounded-lg"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Product Info */}
+                  <div className="p-2">
+                    <h3 className="text-base font-bold text-gray-800 mb-1">
+                      {product.name}
+                    </h3>
+                      <p className="text-lg font-bold text-orange-500">
+                        {formatCOPPrice(product.price)}
+                      </p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
+
+        {/* Additional spacing for half-screen layout */}
+        <div className="pb-8"></div>
       </main>
+      
       <footer className="bg-[#103B3C] text-white text-center py-4">
-        <p className="text-sm">2025© Sofka Technologies / All Rigths Reserved.</p>
+        <p className="text-sm">2025© Sofka Technologies / All Rights Reserved.</p>
       </footer>
     </>
   )

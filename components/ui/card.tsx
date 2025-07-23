@@ -13,7 +13,7 @@ export function Card({ variant = "default", className, children, ...props }: Car
   }
 
   return (
-    <div className={cn("rounded-xl p-5", variants[variant], className)} {...props}>
+    <div className={cn("rounded-xl p-2", variants[variant], className)} {...props}>
       {children}
     </div>
   )

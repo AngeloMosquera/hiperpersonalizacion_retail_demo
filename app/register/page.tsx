@@ -70,7 +70,7 @@ export default function RegisterPage() {
             <Input
               label="Nombre completo"
               type="text"
-              placeholder="Carlos Rodríguez"
+              placeholder="Jorge Rodríguez"
               icon={<User size={18} />}
               required
             />

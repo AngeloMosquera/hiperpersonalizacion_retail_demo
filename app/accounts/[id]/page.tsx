@@ -136,7 +136,7 @@ export default function AccountDetailsPage() {
         <div className="space-y-6">
           <QuickActions
             accountType={account.type}
-            userName="Carlos"
+            userName="Jorge"
             accountBalance={account.balance}
             hasUnusedCredit={account.type === "credit" && account.availableCredit > 10000}
             lowSavings={account.type === "savings" && account.balance < 10000}
