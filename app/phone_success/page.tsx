@@ -12,22 +12,22 @@ const formatCOPPrice = (price: number) => {
   return `$${price.toLocaleString('es-CO')}`
 }
 
-// Product data (same as desk confirm page)
+// Product data (same as phone confirm page)
 const product = {
   id: "1",
-  name: "Sofka Pro Desk 2025",
-  originalPrice: 3250000,
-  currentPrice: 2437500,
-  discountPercentage: 25,
-  category: "Audio",
-  image: "/desk.jpg",
-  description: "Combina estilo, durabilidad y ergonomía con el Pro Desk 2025 de Sofka Muebles. Diseñado en madera de alta calidad con un elegante acabado en bambú."
+  name: "Samsung Galaxy S25+",
+  originalPrice: 6440000,
+  currentPrice: 5600000,
+  discountPercentage: 15,
+  category: "Smartphones",
+  image: "/phone_img_1.jpg",
+  description: "Diseño elegante, potencia sin límites. El Galaxy S25 Plus te acompaña en todo momento con un rendimiento fluido, fotos increíbles y batería para todo el día. Conectividad avanzada y resistencia total, listo para lo que venga."
 }
 
 // Order details
 const orderDetails = {
   orderId: "SOF-2025-" + Math.random().toString(36).substring(2, 12).toUpperCase(),
-  estimatedDelivery: "1-2 días hábiles",
+  estimatedDelivery: "1 día",
   shippingCost: 0, // Free shipping
   totalAmount: product.currentPrice,
   orderDate: new Date().toLocaleDateString('es-CO'),
