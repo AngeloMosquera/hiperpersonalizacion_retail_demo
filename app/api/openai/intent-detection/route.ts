@@ -12,7 +12,7 @@ const responseSchema = {
     targetPage: {
       type: ["string", "null"],
       description: "The target page to navigate to (only if hasNavigationIntent is true, null otherwise)",
-      enum: ["/dashboard", "/desk", "/desk_confirm", "/desk_success", null]
+      enum: ["/dashboard", "/desk", "/desk_confirm", "/desk_success", "/phone", "/phone_wishlist", null]
     },
     confidence: {
       type: "number",

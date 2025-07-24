@@ -53,12 +53,13 @@ const generalSystemPrompt = `Actúa como un asistente retail virtual dentro de l
   Si el usuario dice que no quiere ver lo que preparaste para él o que no quiere ver el escritorio, dile cordialmente que no hay problema.
 
 - Si el usuario muestra interes o te pide que le muestres/cuentes sobre el telefono, responde con:
-  "Es el nuevo Samsung Galaxy S25 plus, cuenta con una pantalla Dynamic AMOLED 2X de 6,7 pulgadas y un procesador Snapdragon 8 Gen 4 para un rendimiento fluido. Su cámara principal de 50 mega pixeles ofrece buena calidad y versatilidad, mientras que su batería de 4,900 miliamperios hora garantiza una autonomía confiable. Además, incluye carga rápida e inalámbrica, y resistencia al agua y polvo con certificación IP68."
+  "Es el nuevo Samsung Galaxy S25 plus, cuenta con una pantalla Dynamic AMOLED 2X de 6,7 pulgadas y un procesador Snapdragon 8 Gen 4 para un rendimiento fluido. Su cámara principal de 50 mega pixeles ofrece buena calidad y versatilidad."
 
-  Si el usuario te hace una pregunta específica sobre el telefono, respondele adecuadamente tomando en cuenta las siguientes caracteristicas del telefono:
+  Si el usuario te hace una pregunta específica sobre alguna característica del telefono, respondele adecuadamente y de forma concisa tomando en cuenta las siguientes caracteristicas del telefono:
     - Marca: Samsung
     - Modelo: Galaxy S25 Plus
     - Precio: $5,600,000 pesos
+    - Descuento: En este momento no tiene descuento. (No le digas nada más al usuario si pregunta sobre descuentos, solo dile que no tiene descuento en este momento.)
     - Pantalla: Dynamic AMOLED 2X de 6,7 pulgadas
     - Procesador: Snapdragon 8 Gen 4
     - Cámara: Principal de 50 megapíxeles
@@ -70,11 +71,18 @@ const generalSystemPrompt = `Actúa como un asistente retail virtual dentro de l
     - Sistema operativo: Android 15
     - Fecha de lanzamiento: 22 de Enero de 2025
     - Conectividad: 5G, WiFi 7, Bluetooth 5.4, eSIM, NFC, USB-C 3.2, GPS
-    - Dimensiones: 158.4 x 75.8 x 7.3 mm
+    - Dimensiones: 158.4 x 75.8 x 7.3 milímetros
     - Peso: 190 gramos
+    - Garantía: 12 meses de garantía contra defectos de fabricación
+    - Devolución: 30 días para devoluciones sin costo si el producto no cumple con las expectativas
+    - Marco: Aluminio ligero, que proporciona durabilidad y resistencia
+    - Disponibilidad: Entrega estimada de 1 día
   
-  Si el usuario te dice que le avises, informes, recuerdes, etc. cuando el telefono esté en promoción, responde con:
+  Si el usuario te dice que le avises, informes, recuerdes, etc. cuando el telefono esté en descuento, promociones, etc. responde con:
   "Por supuesto! Agregaré el Samsung Galaxy S25 Plus a tu lista de favoritos y te informaré de inmediato cuando esté en oferta."
+
+  Si el usuario te dice que vuelva a la página del teléfono, responde con:
+  "Claro que sí, te llevo a la página del teléfono."
 
   Si el usuario te dice que vuelvas al inicio, responde con:
   "Claro que sí, te llevo de vuelta al inicio."
@@ -216,15 +224,41 @@ export const conversationContexts: Record<string, ConversationContext> = {
       {
         description: 'El agente le cuenta al usuario o responde sobre características del telefono',
         intent: 'phone',
-        targetPage: '/phone',
+        targetPage: 'null',
         response: 'Te explico sobre el Samsung Galaxy S25 Plus. Te llevo a la sección correspondiente.',
         priority: 2
       },
       {
-        description: 'El agente le dice al usuario que agregará el producto a favoritos',
+        description: 'El agente le dice al usuario explicitamente que agregará el producto a favoritos, no le pregunta si quiere agregar a favoritos, sino que le dice que lo agregará a favoritos.',
         intent: 'phone_wishlist',
         targetPage: '/phone_wishlist',
-        response: 'Te explico sobre los Fondos de Inversión Colectiva. Te llevo a la sección correspondiente.',
+        response: 'Te explico sobre el Samsung Galaxy S25 Plus. Te llevo a la sección correspondiente.',
+        priority: 2
+      },
+    ]
+  },
+
+  phone_wishlist: {
+    id: 'phone_wishlist',
+    name: 'Pantalla del Teléfono',
+    description: 'Asistente retail general para navegación y consultas básicas',
+    personality: 'Sofía es una asistente virtual de retail profesional, cordial y servicial. Se enfoca en ayudar al usuario a navegar y responder consultas generales sobre productos.',
+    systemPrompt: generalSystemPrompt,
+    voice: 'alloy',
+    capabilities: [],
+    navigationCommands: [
+      {
+        description: 'El agente le indica al usuario que lo lleva de vuelta al inicio',
+        intent: 'dashboard',
+        targetPage: '/dashboard',
+        response: 'Te llevo de vuelta al inicio.',
+        priority: 2
+      },
+      {
+        description: 'El agente le indica al usuario que lo lleva a la página del teléfono',
+        intent: 'phone',
+        targetPage: '/phone',
+        response: 'Te explico sobre el Samsung Galaxy S25 Plus. Te llevo a la sección correspondiente.',
         priority: 2
       },
     ]
@@ -241,7 +275,7 @@ export function getContextForPath(pathname: string): ConversationContext {
     '/desk_confirm': 'desk_confirm',
     '/desk_success': 'desk_success',
     '/phone': 'phone',
-    '/phone_wishlist': 'phone',
+    '/phone_wishlist': 'phone_wishlist',
   }
 
   const contextId = pathToContext[pathname] || 'general'
