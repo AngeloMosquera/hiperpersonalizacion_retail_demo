@@ -11,13 +11,13 @@ const formatCOPPrice = (price: number) => {
 // Product data
 const product = {
   id: "1",
-  name: "Sofka Pro Desk 2025",
-  originalPrice: 3250000,
-  currentPrice: 2437500,
-  discountPercentage: 25,
+  name: "Totto Urban Pro Negra",
+  originalPrice: 249900,
+  currentPrice: 224900,
+  discountPercentage: 10,
   category: "Audio",
-  image: "/desk.jpg", // You can replace with actual product image
-  description: "Combina estilo, durabilidad y ergonomía con el Pro Desk 2025 de Sofka Muebles. Diseñado en madera de alta calidad con un elegante acabado en bambú, este escritorio aporta calidez y sofisticación a cualquier espacio de trabajo. Su amplia superficie de 160 x 80 cm brinda comodidad para múltiples dispositivos, y su altura ajustable entre 60 y 120 cm se adapta fácilmente a tu postura ideal, ya sea sentado o de pie. Respaldado por una garantía de 5 años contra defectos de fabricación y con una política de devolución de 90 días sin costo, es una inversión segura para tu home office o estudio profesional."
+  image: "/jacket_totto_full.jpeg", // You can replace with actual product image
+  description: "Versátil, resistente y con un estilo moderno, la chaqueta Toto Urban está pensada para acompañarte en el ritmo de la ciudad. Su diseño impermeable y su aislamiento térmico te mantienen seco y abrigado en días fríos o lluviosos, mientras que la capucha ajustable brinda protección adicional sin sacrificar comodidad. Confeccionada en nailon y poliéster de alta calidad, garantiza durabilidad y ligereza. Disponible únicamente en color negro, es la prenda ideal para quienes buscan funcionalidad y estilo urbano en su día a día."
 }
 
 export default function ProductDetail() {

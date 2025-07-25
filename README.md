@@ -55,7 +55,7 @@ npm run dev
 ## Estructura del Proyecto
 
 ```
-novabank/
+autoshop/
 ├── app/                    # Rutas y páginas principales
 ├── components/            # Componentes reutilizables
 │   ├── presentation/     # Componentes de UI
@@ -120,4 +120,4 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.m
 ## Contacto
 Tu Nombre - [@tutwitter](https://twitter.com/tutwitter) - email@ejemplo.com
 
-Link del Proyecto: [https://github.com/tu-usuario/novabank](https://github.com/tu-usuario/novabank) 
+Link del Proyecto: [https://github.com/tu-usuario/autoshop](https://github.com/tu-usuario/autoshop) 

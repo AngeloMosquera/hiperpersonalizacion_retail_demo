@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
         webView = findViewById(R.id.webview)
         setupWebView()
         
-        // Load your NovaBank app
-        webView.loadUrl("https://your-novabank-domain.com")
+        // Load your AutoShop app
+        webView.loadUrl("https://your-autoshop-domain.com")
     }
     
     private fun setupWebView() {
@@ -72,7 +72,7 @@ class NovaWebViewClient : WebViewClient() {
         val url = request?.url?.toString()
         
         // Handle external links (optional)
-        if (url != null && !url.contains("your-novabank-domain.com")) {
+        if (url != null && !url.contains("your-autoshop-domain.com")) {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
             view?.context?.startActivity(intent)
             return true

@@ -13,27 +13,27 @@ const formatCOPPrice = (price: number) => {
   return `$${price.toLocaleString('es-CO')}`
 }
 
-// Product data (same as desk page)
+// Product data (same as jacket page)
 const product = {
   id: "1",
-  name: "Sofka Pro Desk 2025",
-  originalPrice: 3250000,
-  currentPrice: 2437500,
-  discountPercentage: 25,
+  name: "Totto Urban Pro Negra",
+  originalPrice: 250000,
+  currentPrice: 225000,
+  discountPercentage: 10,
   category: "Audio",
-  image: "/desk.jpg",
-  description: "Combina estilo, durabilidad y ergonomía con el Pro Desk 2025 de Sofka Muebles. Diseñado en madera de alta calidad con un elegante acabado en bambú."
+  image: "/jacket_totto_full.jpeg",
+  description: "Versátil, resistente y con un estilo moderno, la chaqueta Toto Urban está pensada para acompañarte en el ritmo de la ciudad. Su diseño impermeable y su aislamiento térmico te mantienen seco y abrigado en días fríos o lluviosos, mientras que la capucha ajustable brinda protección adicional sin sacrificar comodidad. Confeccionada en nailon y poliéster de alta calidad, garantiza durabilidad y ligereza. Disponible únicamente en color negro, es la prenda ideal para quienes buscan funcionalidad y estilo urbano en su día a día."
 }
 
 // Order details
 const orderDetails = {
   orderId: "SOF-2025-" + Math.random().toString(36).substring(2, 6).toUpperCase(),
-  estimatedDelivery: "1-2 días hábiles",
+  estimatedDelivery: "1 día",
   shippingCost: 0, // Free shipping
   totalAmount: product.currentPrice
 }
 
-export default function DeskConfirmPage() {
+export default function JacketConfirmPage() {
   const router = useRouter()
   
   // Form state
@@ -46,7 +46,7 @@ export default function DeskConfirmPage() {
 
   const handleConfirmOrder = () => {
     // Navigate to a success page or dashboard
-    router.push("/desk_success")
+    router.push("/jacket_success")
   }
 
   const handleGoBack = () => {

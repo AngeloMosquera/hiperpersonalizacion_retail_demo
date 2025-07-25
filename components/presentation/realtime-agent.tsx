@@ -746,7 +746,7 @@ export const RealtimeAgent = forwardRef<RealtimeAgentRef, RealtimeAgentProps>(
     return (
       <div className="relative h-full w-full" onClick={handleContainerClick}>
         {/* Connection state indicator */}
-        <div className="absolute top-4 right-4 bg-black/50 text-white px-2 py-1 rounded text-sm z-50">
+        {/* <div className="absolute top-4 right-4 bg-black/50 text-white px-2 py-1 rounded text-sm z-50">
           <div className="flex items-center gap-2">
             <span>{connectionState}</span>
             {connectionState === 'connected' && (
@@ -757,7 +757,7 @@ export const RealtimeAgent = forwardRef<RealtimeAgentRef, RealtimeAgentProps>(
               <span className="text-xs">🎵 {audioContextRef.current.state}</span>
             )}
           </div>
-        </div>
+        </div> */}
 
         {/* Error display */}
         {error && (
@@ -816,14 +816,14 @@ export const RealtimeAgent = forwardRef<RealtimeAgentRef, RealtimeAgentProps>(
                     {connectionState === 'disconnected' && 'Desconectado'}
                   </h3>
                   
-                  <p className="text-sm text-gray-600 mb-3">
+                  <p className="text-sm text-gray-600 mb-3 px-6">
                     {connectionState === 'connecting' && 'Estableciendo conexión de voz...'}
-                    {connectionState === 'connected' && 'Asistente Virtual de NovaBank'}
+                    {connectionState === 'connected' && 'Asistente Virtual de AutoShop'}
                     {connectionState === 'error' && 'No se pudo conectar'}
                     {connectionState === 'disconnected' && 'Conexión perdida'}
                   </p>
                   
-                  {connectionState === 'connected' && (
+                  {/* {connectionState === 'connected' && (
                     <div className="space-y-1">
                       <p className="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-full inline-block">
                         🎤 {isMicrophoneActive ? 'Micrófono activo' : 'Micrófono inactivo'}
@@ -832,7 +832,7 @@ export const RealtimeAgent = forwardRef<RealtimeAgentRef, RealtimeAgentProps>(
                         🌐 {currentContext.name}
                       </p>
                     </div>
-                  )}
+                  )} */}
                 </div>
               </div>
             </div>
