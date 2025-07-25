@@ -39,7 +39,7 @@ const featuredProducts = [
 export default function Dashboard() {
   return (
     <>
-      <main className="min-h-screen bg-[#fffac2] px-4 py-4">
+      <main className="bg-[#fffac2] px-4 py-4">
         {/* Header */}
         <div className="text-left ml-2">
           <h1 className="text-l md:text-l font-bold text-black mb-2">
@@ -123,9 +123,6 @@ export default function Dashboard() {
             ))}
           </div>
         </div>
-
-        {/* Additional spacing for half-screen layout */}
-        <div className="pb-8"></div>
       </main>
       
       <footer className="bg-[#103B3C] text-white text-center py-4">

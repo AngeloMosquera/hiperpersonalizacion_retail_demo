@@ -232,18 +232,18 @@ export function AudioRecorder({ onTranscription, isActive, onRecordingStateChang
     <div className="fixed bottom-4 right-4 z-50">
       <div className="flex items-center gap-2">
         {/* Indicador de estado */}
-        <div className={`w-3 h-3 rounded-full ${
+        {/* <div className={`w-3 h-3 rounded-full ${
           isRecording ? 'bg-red-500 animate-pulse' : 
           isProcessing ? 'bg-yellow-500' : 
           'bg-gray-400'
-        }`} />
+        }`} /> */}
         
         {/* Texto de estado */}
-        <span className="text-xs text-white bg-black/50 px-2 py-1 rounded">
+        {/* <span className="text-xs text-white bg-black/50 px-2 py-1 rounded">
           {isRecording ? 'Grabando...' : 
            isProcessing ? 'Procesando...' : 
            'Inactivo'}
-        </span>
+        </span> */}
       </div>
     </div>
   )

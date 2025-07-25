@@ -55,7 +55,7 @@ export default function DeskConfirmPage() {
 
   return (
     <>
-      <main className="min-h-screen bg-[#fffac2] px-4 py-4">
+      <main className="bg-[#fffac2] px-4 py-4">
         <div className="max-w-4xl mx-auto space-y-6">
           
           {/* Order Summary Card */}

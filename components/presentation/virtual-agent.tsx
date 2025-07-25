@@ -396,12 +396,13 @@ export function VirtualAgent() {
       )}
 
       {/* Indicador de contexto */}
-      <div className="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm z-50">
+      {/* TODO: Re-activar el indicador de contexto */}
+      {/* <div className="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm z-50">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 bg-white rounded-full"></span>
           <span>{currentContext.name}</span>
         </div>
-      </div>
+      </div> */}
 
       {/* Indicador de navegación */}
       {navigationDetected && (

@@ -23,7 +23,7 @@ const product = {
 export default function ProductDetail() {
   return (
     <>
-      <main className="min-h-screen bg-[#fffac2] px-4 py-4">
+      <main className="bg-[#fffac2] px-4 py-4">
         <div className="max-w-4xl mx-auto">
           <Card className="bg-white shadow-lg overflow-hidden">
             <CardContent className="p-2">
